@@ -7,24 +7,30 @@ import './App.css';
   constructor() {
     super();
     this.state = {
-      name: { firstName: 'Billy', lastName: 'Veillette-Daigle'},
-      company: 'Connect & Go'
+      monsters: [
+        {
+          name: 'James'
+        },
+        {
+          name: 'Piedro'
+        },
+        {
+          name: 'Franky'
+        },
+        {
+          name: 'Billy'
+        }
+      ]
     }
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hi {this.state.name.firstName} {this.state.name.lastName}!,
-            I work at {this.state.company}
-          </p>
-          <button onClick={() => {
-            this.setState({name: {firstName: 'Gabrielle', lastName: 'Oligny-Hebert'}})
-          }}>Change Me!</button>
-        </header>
+        {this.state.monsters.map((monster) => {
+            return <h1>{monster.name}</h1>;
+          })
+        }
       </div>
     );
   }
