@@ -19,7 +19,9 @@ import './App.css';
           <p>
             Hi {this.state.name}!
           </p>
-          <button>Change Me!</button>
+          <button onClick={() => {
+            this.setState({name: 'Gabrielle'})
+          }}>Change Me!</button>
         </header>
       </div>
     );
